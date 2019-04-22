@@ -14,9 +14,6 @@ spl_autoload_register(function ($className) {
 //simple config
 include_once('config.php');
 
-//todo: DB
-//$dbHelper = new \app\core\DbHelper($config['db'],$config['db_user'],$config['db_pass']);
-
 //simple router
 $uri = $_SERVER['REQUEST_URI'];
 if(strpos($uri,'?') > -1) {
@@ -40,5 +37,3 @@ $someActionName = ucfirst(strtolower($someAction)) . 'Action';
 //try run it (todo: add exeptions)
 $x = new $someControllerClass();
 $x->$someActionName();
-
-//echo 'your way is: ' . $someController . '/' . $someAction;
