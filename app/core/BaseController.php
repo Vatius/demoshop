@@ -18,7 +18,7 @@ class BaseController {
 
     public function render($view, $data = []) {
         //some here
-        $classname = str_replace("app\controllers","",static::class); 
+        $classname = str_replace("app\controllers\","",static::class); 
         $classname = str_replace("Controller","",$classname);
         $classname = strtolower($classname);
         echo $this->renderPhpFile(APP_DIR.DS.'views'.DS.'layout'.DS.$this->layout.'.php', [
